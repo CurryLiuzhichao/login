@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author lzc
- * @since 2022-05-17 09:22:39
+ * @since 2022-05-17 11:34:19
  */
 public interface UserMapper extends BaseMapper<User> {
 

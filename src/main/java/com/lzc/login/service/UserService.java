@@ -13,4 +13,26 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
+    /**
+     * 用户注册
+     * @param username 用户名
+     * @param password 密码
+     * @return
+     */
+    int register(String username, String password);
+
+    /**
+     * 检查用户名是否重复
+     * @param username
+     * @return
+     */
+    Boolean checkRepeat(String username);
+
+    /**
+     * 登录功能
+     * @param username
+     * @param password
+     * @return
+     */
+    String login(String username, String password);
 }
