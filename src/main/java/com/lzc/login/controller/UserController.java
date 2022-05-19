@@ -2,6 +2,7 @@ package com.lzc.login.controller;
 
 
 import com.lzc.login.base.ResultInfo;
+import com.lzc.login.dto.LoginDTO;
 import com.lzc.login.service.FaceLoginService;
 import com.lzc.login.service.UserService;
 import io.swagger.annotations.ApiOperation;
@@ -89,6 +90,24 @@ public class UserController {
         return resultInfo;
     }
 
+
+    @ApiOperation(value = "注销登录")
+    @ResponseBody
+    @PostMapping("logout")
+    public ResultInfo logout(HttpServletRequest request) {
+        return userService.logout(request);
+    }
+
+    @ApiOperation(value = "完善信息接口")
+    @ResponseBody
+    @PostMapping("perfectinformation")
+    public ResultInfo perfectInformation(@RequestBody Map<String,String> map){
+        ResultInfo resultInfo = new ResultInfo();
+        //if (!(hasLength(map.get("realName"))||))
+        return  resultInfo;
+
+    }
+
     @ApiOperation(value = "人脸注册-账号注册后进行人脸注册")
     @ResponseBody
     @PostMapping("face-register")
@@ -97,6 +116,13 @@ public class UserController {
         String str = faceLoginService.registerFace(userid, imagebast64);
         resultInfo.setMsg(userid+"用户"+str);
         return resultInfo;
+    }
+
+    @ApiOperation(value = "主页")
+    @RequestMapping("index")
+    public String index(){
+
+        return "index";
     }
 
 }

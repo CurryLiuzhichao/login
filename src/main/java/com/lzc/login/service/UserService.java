@@ -1,7 +1,11 @@
 package com.lzc.login.service;
 
+import com.lzc.login.base.ResultInfo;
+import com.lzc.login.dto.LoginDTO;
 import com.lzc.login.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -35,4 +39,12 @@ public interface UserService extends IService<User> {
      * @return
      */
     String login(String username, String password);
+
+    /**
+     * 退出登录
+     * @param request
+     * @return
+     */
+    ResultInfo logout(HttpServletRequest request);
+    
 }

@@ -3,7 +3,9 @@ package com.lzc.login.service.impl;
 import com.lzc.login.service.FaceLoginService;
 import com.lzc.login.util.BaiduAiUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FaceLoginServiceImpl implements FaceLoginService {
 
     @Autowired
